@@ -17,10 +17,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Use Node.js
+      - name: Use Node.js (required by Vite)
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          # Vite requires Node.js >= 20.19 or 22.12+, use Node 22 LTS for CI
+          node-version: '22.x'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
