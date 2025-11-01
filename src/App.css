@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0F4C81; /* deep navy */
+  --accent: #F6B042;  /* warm gold */
+  --primary-50: #eaf3fb;
+  --muted: #6B7280;
+  --dark: #0b2435;
+  --white: #FFFFFF;
+  --off-white: #F7FAFC;
+  --light-gray: #EDF2F7;
+  --gradient: linear-gradient(135deg, var(--primary) 0%, #2b6a9a 50%, #6aa5d8 100%);
+  --glass: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  --shadow-soft: 0 8px 30px rgba(8, 30, 47, 0.08);
+  --shadow-medium: 0 14px 40px rgba(8, 30, 47, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  direction: rtl;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #fbfdff 0%, #f4f9fd 100%);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 0.6rem;
+  color: var(--dark);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.05;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* تحسينات التجاوب */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* تأثيرات الـ 3D */
+.perspective-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* تأثيرات الظلال المتقدمة */
+.shadow-premium {
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* تأثيرات الزجاج */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}

@@ -1,0 +1,490 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2D3748 50%, #4A5568 100%);
+  color: var(--white);
+  padding: 120px 0 80px;
+  }
+
+/* خلفية ثلاثية الأبعاد متحركة */
+.hero-background-3d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  }
+    
+  .hero-visual {
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 420px;
+    max-width: 44%;
+    opacity: 0.95;
+  }
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  transform-style: preserve-3d;
+  }
+
+/* الشعار ثلاثي الأبعاد */
+.hero-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  transform-style: preserve-3d;
+  }
+
+.logo-icon-3d {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-premium);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.8rem;
+  transform: translateZ(20px);
+  animation: logoFloat3d 6s ease-in-out infinite;
+  box-shadow: var(--shadow-glow);
+  }
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #9F7AEA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: translateZ(10px);
+  }
+
+/* constrained image logo inside hero (was too large) */
+.hero-logo-img {
+  height: 500px;
+  
+  width: auto;
+  display: block;
+  margin: auto;
+  object-fit: contain;
+}
+
+/* العنوان الرئيسي */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+   margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--white);
+  transform-style: preserve-3d;
+  }
+
+.title-line {
+  display: block;
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  transform: translateZ(30px);
+  }
+
+.title-highlight {
+  display: block;
+  font-size: 2.2rem;
+  background: var(--gradient-premium);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  transform: translateZ(25px);
+  }
+
+/* الوصف */
+.hero-description {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  transform: translateZ(15px);
+  }
+    
+  .hero-description  {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.95);
+    font-weight: 400;
+  }
+
+/* الأزرار ثلاثية الأبعاد */
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  transform-style: preserve-3d;
+  }
+
+.hero-btn {
+  padding: 1.3rem 2.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: translateZ(20px);
+  }
+
+.primary-3d {
+  background: var(--gradient-premium);
+  color: white;
+  box-shadow: 
+    0 15px 35px rgba(107, 70, 193, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+.secondary-3d {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+.hero-btn:hover {
+  transform: translateZ(30px) translateY(-5px) scale(1.05);
+  }
+
+.primary-3d:hover {
+  box-shadow: 
+    0 25px 50px rgba(107, 70, 193, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    var(--shadow-glow);
+}
+
+.secondary-3d:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.btn-shine {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 120%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+  transform: skewX(-18deg) translateX(0);
+  filter: blur(6px);
+  transition: transform 0.6s ease, left 0.6s ease, opacity 0.6s ease;
+  opacity: 0.0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* show the shine on hover/focus */
+.hero-btn:hover .btn-shine,
+.hero-btn:focus .btn-shine {
+  left: 140%;
+  opacity: 1;
+  transform: skewX(-18deg) translateX(10%);
+}
+
+/* pressed state for tactile feedback */
+.hero-btn:active {
+  transform: translateZ(12px) translateY(0) scale(0.995);
+  box-shadow: 0 8px 18px rgba(16,24,40,0.18);
+}
+
+/* المميزات ثلاثية الأبعاد */
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  transform-style: preserve-3d;
+  }
+
+.feature-3d {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  transform: translateZ(15px);
+  }
+
+.feature-3d:hover {
+  transform: translateZ(25px) translateY(-8px) scale(1.05);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-glow);
+}
+
+.feature-icon-3d {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-premium);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  transform: translateZ(10px);
+  transition: all 0.3s ease;
+  }
+
+.feature-3d:hover .feature-icon-3d {
+  transform: translateZ(20px) scale(1.1) rotate(5deg);
+}
+
+.feature-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transform: translateZ(5px);
+  }
+
+/* الإحصائيات ثلاثية الأبعاد */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  }
+  .hero-stats { display: none; }
+
+/* مؤشر التمرير ثلاثي الأبعاد */
+.scroll-indicator-3d {
+  position: absolute;
+  bottom: 30px;
+  right: 50%;
+  transform: translateX(50%) translateZ(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  z-index: 10;
+  }
+  .scroll-indicator-3d { display: none; }
+
+.scroll-line-3d {
+  width: 2px;
+  height: 50px;
+  background: var(--gradient-premium);
+  margin-bottom: 0.5rem;
+  border-radius: 1px;
+  animation: scrollBounce3d 2s infinite;
+  transform-style: preserve-3d;
+}
+
+/* الجسيمات المتحركة */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  transform-style: preserve-3d;
+}
+
+/* hide decorative particles on small screens for performance and clarity */
+@media (max-width: 768px) {
+  .particles-container { display: none !important; }
+}
+
+/* Hero illustration removed: hide any leftover visual classes to avoid layout shift */
+.hero-visual,
+.hero-visual-wrap {
+  display: none !important;
+}
+
+/* الأنيميشن ثلاثية الأبعاد */
+@keyframes bgFloat3d {
+  0%, 100% {
+    transform: translateZ(-100px) scale(1.2) rotate(0deg);
+  }
+  33% {
+    transform: translateZ(-100px) scale(1.2) rotate(1deg);
+  }
+  66% {
+    transform: translateZ(-100px) scale(1.2) rotate(-1deg);
+  }
+}
+
+@keyframes logoFloat3d {
+  0%, 100% {
+    transform: translateZ(20px) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateZ(30px) translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes float3d {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate3d(20px, -20px, 10px) rotate(3deg);
+  }
+  66% {
+    transform: translate3d(-15px, 15px, -5px) rotate(-2deg);
+  }
+}
+
+@keyframes scrollBounce3d {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateZ(0);
+  }
+  40% {
+    transform: translateY(-15px) translateZ(10px);
+  }
+  60% {
+    transform: translateY(-7px) translateZ(5px);
+  }
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 968px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .title-highlight {
+    font-size: 1.8rem;
+  }
+  
+  .hero-description p {
+    font-size: 1.2rem;
+  }
+  
+  .hero-features {
+    gap: 2rem;
+  }
+  
+  .hero-stats {
+    gap: 3rem;
+  }
+  
+  .stat-number {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 60px;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .title-highlight {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-logo-img {
+    height: 44px;
+  }
+  
+  .hero-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 1.2rem 2rem;
+  }
+  
+  .hero-features {
+    gap: 1.5rem;
+  }
+  
+  .feature-3d {
+    padding: 1.2rem 1.5rem;
+  }
+  
+  .hero-stats {
+    gap: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .title-highlight {
+    font-size: 1.2rem;
+  }
+  
+  .logo-text {
+    font-size: 1.4rem;
+  }
+  
+  .logo-icon-3d {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .hero-features {
+    gap: 1rem;
+  }
+  
+  .feature-3d {
+    padding: 1rem;
+  }
+  
+  .feature-icon-3d {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+}

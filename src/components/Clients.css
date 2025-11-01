@@ -1,0 +1,61 @@
+.clients {
+  padding: 5rem 0;
+  background: var(--white);
+}
+
+.clientsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.clientCard {
+  background: var(--light-gray);
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-bottom: 4px solid transparent;
+}
+
+.clientCard:hover {
+  transform: translateY(-5px);
+  border-bottom-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.clientIcon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-blue) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--white);
+  font-size: 1.8rem;
+}
+
+.clientCard h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--dark-blue);
+}
+
+.clientCard p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .clientsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .clientCard {
+    padding: 2rem 1.5rem;
+  }
+}
