@@ -8,14 +8,18 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # Grant the runner permission to write repository contents so the action can push
     permissions:
-      contents: read
+      contents: write
       pages: write
       id-token: write
 
     steps:
-      - name: Checkout
+      - name: Checkout (persist credentials for GH_TOKEN)
         uses: actions/checkout@v4
+        with:
+          # ensure the checkout step leaves the GITHUB_TOKEN available for later git push
+          persist-credentials: true
 
       - name: Use Node.js (required by Vite)
         uses: actions/setup-node@v4
